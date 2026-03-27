@@ -53,14 +53,8 @@ FS.add_rules([
     "IF (PL IS low) AND (TOD IS night) THEN (Headway IS long)"
 ])
 
-# Sugeno output (constant)
-FS.set_crisp_output_value("very_short", 4.5)
-FS.set_crisp_output_value("short", 8)
-FS.set_crisp_output_value("standard", 12.5)
-FS.set_crisp_output_value("long", 22.5)
-
 # Input
-FS.set_variable("PL", 2)
-FS.set_variable("TOD", 22)
+FS.set_variable("PL", 50)
+FS.set_variable("TOD", 10)
 
-print("Mamdani:", FS.Sugeno_inference(["Headway"]))
+print("Mamdani:", FS.Mamdani_inference(["Headway"]))
